@@ -1,10 +1,10 @@
 import styles from './Card.module.scss';
 import type { ReactNode } from 'react';
 
-type Props = {
+type CardProps = {
   children: ReactNode;
 };
 
-export const Card = ({ children }: Props) => {
+export const Card = ({ children }: CardProps) => {
   return <div className={styles.card}>{children}</div>;
 };

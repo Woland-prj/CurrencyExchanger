@@ -1,6 +1,10 @@
 import styles from './PairInfo.module.scss';
 
-export const PairInfo = ({ pair }: { pair: string }) => {
+type PairInfoProps = {
+  pair: string;
+};
+
+export const PairInfo = ({ pair }: PairInfoProps) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.divider}></div>

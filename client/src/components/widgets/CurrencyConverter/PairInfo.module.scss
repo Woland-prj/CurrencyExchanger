@@ -6,21 +6,21 @@
   align-items: center;
 
   margin: 12px 0;
+}
 
-  .divider {
-    position: absolute;
-    inline-size: 100%;
-    block-size: 1px;
-    background: #d9d9d9;
-  }
+.badge {
+  position: relative;
+  z-index: 1;
 
-  .badge {
-    position: relative;
-    z-index: 1;
+  padding: 8px 40px;
 
-    padding: 8px 40px;
+  background: #d9d9d9;
+  border-radius: 999px;
+}
 
-    background: #d9d9d9;
-    border-radius: 999px;
-  }
+.divider {
+  position: absolute;
+  inline-size: 100%;
+  block-size: 1px;
+  background: #d9d9d9;
 }

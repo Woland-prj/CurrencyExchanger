@@ -1,13 +1,13 @@
 import styles from './ExchangeRateHeader.module.scss';
 
-type Props = {
+type ExchangeRateHeaderProps = {
   rate: number;
   from: string;
   to: string;
   updateDate: Date;
 };
 
-export const ExchangeRateHeader = ({ rate, from, to, updateDate }: Props) => {
+export const ExchangeRateHeader = ({ rate, from, to, updateDate }: ExchangeRateHeaderProps) => {
   const formattedDate = new Intl.DateTimeFormat('en-GB', {
     weekday: 'short',
     day: '2-digit',
@@ -21,11 +21,11 @@ export const ExchangeRateHeader = ({ rate, from, to, updateDate }: Props) => {
 
   return (
     <div className={styles.header}>
-      <span>1 {from} is</span>
-      <h1>
+      <span className={styles.info}>1 {from} is</span>
+      <h1 className={styles.title}>
         {rate} {to}
       </h1>
-      <small>{formattedDate} UTC</small>
+      <small className={styles.date}>{formattedDate} UTC</small>
     </div>
   );
 };

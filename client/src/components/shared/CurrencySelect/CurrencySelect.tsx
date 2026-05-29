@@ -9,10 +9,14 @@ type Props = {
 
 export const CurrencySelect = ({ currentCurrency, currencies, onChange }: Props) => {
   return (
-    <select className={styles.select} value={currentCurrency.Code} onChange={(e) => onChange(e.target.value)}>
+    <select
+      className={styles.select}
+      value={currentCurrency.code}
+      onChange={(e) => onChange(e.target.value)}
+    >
       {currencies.map((currency) => (
-        <option value={currency.Code} key={currency.Code}>
-          {currency.Code}
+        <option value={currency.code} key={currency.code}>
+          {currency.code}
         </option>
       ))}
     </select>

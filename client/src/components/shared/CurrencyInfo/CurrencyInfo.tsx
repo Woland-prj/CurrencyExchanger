@@ -9,9 +9,9 @@ export const CurrencyInfo = ({ currency }: Props) => {
   return (
     <div className={styles.info}>
       <h3>
-        {currency.Fullname} - {currency.Code} - {currency.Symbol}
+        {currency.name} - {currency.code} - {currency.symbol}
       </h3>
-      <p>{currency.Description}</p>
+      <p>{currency.description}</p>
     </div>
   );
 };

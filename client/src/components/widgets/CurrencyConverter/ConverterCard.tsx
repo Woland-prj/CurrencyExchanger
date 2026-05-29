@@ -2,37 +2,53 @@ import { Card } from '../../ui/Card/Card';
 import { ExchangeRateHeader } from './ExchangeRateHeader';
 import { CurrencyRow } from '../../shared/CurrencyRow/CurrencyRow';
 import { PairInfo } from './PairInfo';
-import { CurrencyInfo } from '../../shared/CurrencyInfo/CurrencyInfo';
-
-import { usd, pln, jpy } from '../../../mockdata/Currencies';
+import { Button } from '../../ui/Button/Button';
+import { useConverter } from '../../../hooks/useConverter';
+import { currencies } from '../../../mockdata/Currencies';
+import { priceChanges } from '../../../mockdata/Rates';
+import styles from './ConverterCard.module.scss';
 
 export const ConverterCard = () => {
-  const currencies = [usd, pln, jpy];
+  const {
+    amount,
+    result,
+    fromCurrency,
+    toCurrency,
+    rate,
+    updateDate,
+    setAmount,
+    handleFromCurrencyChange,
+    handleToCurrencyChange,
+    swap
+  } = useConverter(currencies, priceChanges);
+
+  const pairKey = `${fromCurrency.code}-${toCurrency.code}`;
 
   return (
     <Card>
-      <ExchangeRateHeader rate={0.99} from={pln.Fullname} to={jpy.Fullname} updateDate={new Date()} />
+      <ExchangeRateHeader rate={rate} from={fromCurrency.name} to={toCurrency.name} updateDate={updateDate} />
 
       <CurrencyRow
-        value="1"
-        currency={pln}
+        value={amount}
+        currency={fromCurrency}
         currencies={currencies}
-        onValueChange={() => {}}
-        onCurrencyChange={() => {}}
+        onValueChange={setAmount}
+        onCurrencyChange={handleFromCurrencyChange}
       />
+
+      <div className={styles.buttonWrapper}>
+        <Button onClick={swap}>↑↓</Button>
+      </div>
 
       <CurrencyRow
-        value="0.99"
-        currency={jpy}
+        value={result}
+        currency={toCurrency}
         currencies={currencies}
         onValueChange={() => {}}
-        onCurrencyChange={() => {}}
+        onCurrencyChange={handleToCurrencyChange}
       />
 
-      <PairInfo pair="PLN/JPY" />
-
-      <CurrencyInfo currency={pln} />
-      <CurrencyInfo currency={jpy} />
+      <PairInfo key={pairKey} from={fromCurrency} to={toCurrency} />
     </Card>
   );
 };

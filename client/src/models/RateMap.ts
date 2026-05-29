@@ -1,3 +1,3 @@
-import type { CurrencyCode } from './Currency';
+import type { PriceChange } from './PriceChange';
 
-export type RateMap = Map<CurrencyCode, number>;
+export type PriceChanges = Record<string, Record<string, PriceChange>>;

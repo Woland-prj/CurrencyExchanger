@@ -1,6 +1,6 @@
 import { ConverterPage } from '../../pages/ConverterPage';
 
-import './index.css';
+import './index.module.css';
 
 export const App = () => {
   return <ConverterPage></ConverterPage>;

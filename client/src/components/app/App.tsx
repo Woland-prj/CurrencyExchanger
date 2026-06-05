@@ -1,7 +1,7 @@
 import { ConverterPage } from '../../pages/ConverterPage';
 
-import './index.module.css';
+import './index.module.scss';
 
 export const App = () => {
-  return <ConverterPage></ConverterPage>;
+  return <ConverterPage />;
 };

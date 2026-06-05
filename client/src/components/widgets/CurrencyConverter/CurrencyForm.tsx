@@ -1,9 +1,31 @@
+import type { Currency } from '../../../models/Currency';
 import { CurrencyRow } from '../../shared/CurrencyRow/CurrencyRow';
 import { Button } from '../../ui/Button/Button';
+import styles from './CurrencyForm.module.scss';
 
-type;
+type ConverterFormProps = {
+  amount: string;
+  fromCurrency: Currency;
+  currencies: Currency[];
+  setAmount: (v: string) => void;
+  handleFromCurrencyChange: (c: string) => void;
+  result: string;
+  swap: () => void;
+  toCurrency: Currency;
+  handleToCurrencyChange: (c: string) => void;
+};
 
-export const ConverterForm = () => {
+export const ConverterForm = ({
+  amount,
+  fromCurrency,
+  currencies,
+  setAmount,
+  handleFromCurrencyChange,
+  result,
+  swap,
+  toCurrency,
+  handleToCurrencyChange
+}: ConverterFormProps) => {
   return (
     <>
       <CurrencyRow
@@ -12,6 +34,7 @@ export const ConverterForm = () => {
         currencies={currencies}
         onValueChange={setAmount}
         onCurrencyChange={handleFromCurrencyChange}
+        isInputBlocked={false}
       />
 
       <div className={styles.buttonWrapper}>
@@ -24,6 +47,7 @@ export const ConverterForm = () => {
         currencies={currencies}
         onValueChange={() => {}}
         onCurrencyChange={handleToCurrencyChange}
+        isInputBlocked={true}
       />
     </>
   );

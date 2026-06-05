@@ -5,7 +5,14 @@ import { describe, expect, it } from 'vitest';
 import { PairInfo } from '../components/widgets/CurrencyConverter/PairInfo';
 import { currencies } from '../mockdata/Currencies';
 
-const pln = currencies.find((c) => c.code === 'PLN')!;
+const pln = {
+  code: 'PLN',
+  description:
+    'This is the official currency and legal tender of Poland. It is subdivided into 100 grosz-y (gr). It is the most traded currency in Central and Eastern Europe and ranks 21st most-traded in the foreign exchange market.',
+  name: 'Polish zloty',
+  symbol: 'zł'
+};
+
 const jpy = currencies.find((c) => c.code === 'JPY')!;
 
 describe('PairInfo', () => {

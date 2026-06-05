@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Currency } from '../models/Currency';
 import type { PriceChanges } from '../models/RateMap';
 
-export function useConverter(currencies: Currency[], priceChanges: PriceChanges) {
+export const useConverter = (currencies: Currency[], priceChanges: PriceChanges) => {
   const [from, setFrom] = useState(currencies[0].code);
   const [to, setTo] = useState(currencies[1].code);
   const [amount, setAmount] = useState('1');
@@ -48,4 +48,4 @@ export function useConverter(currencies: Currency[], priceChanges: PriceChanges)
     handleToCurrencyChange,
     swap
   };
-}
+};

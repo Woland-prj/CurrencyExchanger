@@ -1,12 +1,10 @@
 import { Card } from '../../ui/Card/Card';
 import { ExchangeRateHeader } from './ExchangeRateHeader';
-import { CurrencyRow } from '../../shared/CurrencyRow/CurrencyRow';
 import { PairInfo } from './PairInfo';
-import { Button } from '../../ui/Button/Button';
 import { useConverter } from '../../../hooks/useConverter';
 import { currencies } from '../../../mockdata/Currencies';
 import { priceChanges } from '../../../mockdata/Rates';
-import styles from './ConverterCard.module.scss';
+import { ConverterForm } from './CurrencyForm';
 
 export const ConverterCard = () => {
   const {
@@ -22,11 +20,25 @@ export const ConverterCard = () => {
     swap
   } = useConverter(currencies, priceChanges);
 
+  const key: string = `${fromCurrency.code}-${toCurrency.code}`;
+
   return (
     <Card>
       <ExchangeRateHeader rate={rate} from={fromCurrency.name} to={toCurrency.name} updateDate={updateDate} />
 
-      <PairInfo from={fromCurrency} to={toCurrency} />
+      <ConverterForm
+        amount={amount}
+        fromCurrency={fromCurrency}
+        currencies={currencies}
+        setAmount={setAmount}
+        handleFromCurrencyChange={handleFromCurrencyChange}
+        result={result}
+        swap={swap}
+        toCurrency={toCurrency}
+        handleToCurrencyChange={handleToCurrencyChange}
+      ></ConverterForm>
+
+      <PairInfo key={key} from={fromCurrency} to={toCurrency} />
     </Card>
   );
 };

@@ -3,7 +3,7 @@ import { AmountInput } from '../AmountInput/AmountInput';
 import { CurrencySelect } from '../CurrencySelect/CurrencySelect';
 import type { Currency } from '../../../models/Currency';
 
-type Props = {
+type CurrencyRowProps = {
   value: string;
   currency: Currency;
   currencies: Currency[];
@@ -11,7 +11,7 @@ type Props = {
   onCurrencyChange: (c: string) => void;
 };
 
-export const CurrencyRow = ({ value, currency, currencies, onValueChange, onCurrencyChange }: Props) => {
+export const CurrencyRow = ({ value, currency, currencies, onValueChange, onCurrencyChange }: CurrencyRowProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.row}>

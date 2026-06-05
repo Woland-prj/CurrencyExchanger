@@ -22,33 +22,11 @@ export const ConverterCard = () => {
     swap
   } = useConverter(currencies, priceChanges);
 
-  const pairKey = `${fromCurrency.code}-${toCurrency.code}`;
-
   return (
     <Card>
       <ExchangeRateHeader rate={rate} from={fromCurrency.name} to={toCurrency.name} updateDate={updateDate} />
 
-      <CurrencyRow
-        value={amount}
-        currency={fromCurrency}
-        currencies={currencies}
-        onValueChange={setAmount}
-        onCurrencyChange={handleFromCurrencyChange}
-      />
-
-      <div className={styles.buttonWrapper}>
-        <Button onClick={swap}>↑↓</Button>
-      </div>
-
-      <CurrencyRow
-        value={result}
-        currency={toCurrency}
-        currencies={currencies}
-        onValueChange={() => {}}
-        onCurrencyChange={handleToCurrencyChange}
-      />
-
-      <PairInfo key={pairKey} from={fromCurrency} to={toCurrency} />
+      <PairInfo from={fromCurrency} to={toCurrency} />
     </Card>
   );
 };

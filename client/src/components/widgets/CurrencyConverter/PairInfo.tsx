@@ -3,12 +3,12 @@ import styles from './PairInfo.module.scss';
 import { CurrencyInfo } from '../../shared/CurrencyInfo/CurrencyInfo';
 import type { Currency } from '../../../models/Currency';
 
-type Props = {
+type PairInfoProps = {
   from: Currency;
   to: Currency;
 };
 
-export const PairInfo = ({ from, to }: Props) => {
+export const PairInfo = ({ from, to }: PairInfoProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const pair = `${from.code}/${to.code}`;
 

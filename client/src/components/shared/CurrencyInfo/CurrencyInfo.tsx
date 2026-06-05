@@ -1,11 +1,11 @@
 import styles from './CurrencyInfo.module.scss';
 import type { Currency } from '../../../models/Currency';
 
-type Props = {
+type CurrencyInfoProps = {
   currency: Currency;
 };
 
-export const CurrencyInfo = ({ currency }: Props) => {
+export const CurrencyInfo = ({ currency }: CurrencyInfoProps) => {
   return (
     <div className={styles.info}>
       <h3>

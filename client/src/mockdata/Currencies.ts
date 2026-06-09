@@ -4,7 +4,7 @@ export const currencies: Currency[] = [
   {
     code: 'CAD',
     description:
-      'Accounting for approximately 2% of all global reserves, the Canadian dollar is the sixth-most held reserve currency in the world, behind the U.S. dollar, euro, yen, sterling, and renminbi. The Canadian dollar is popular with central banks because of Canada\'s relative economic soundness, the Canadian government\'s strong sovereign position, and the stability of the country\'s legal and political systems.',
+      "Accounting for approximately 2% of all global reserves, the Canadian dollar is the sixth-most held reserve currency in the world, behind the U.S. dollar, euro, yen, sterling, and renminbi. The Canadian dollar is popular with central banks because of Canada's relative economic soundness, the Canadian government's strong sovereign position, and the stability of the country's legal and political systems.",
     name: 'Canadian dollar',
     symbol: '$'
   },

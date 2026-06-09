@@ -1,0 +1,16 @@
+.notification {
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-block-end: 12px;
+  font-weight: 400;
+}
+
+.error {
+  background: #fee;
+  color: #c00;
+}
+
+.loading {
+  background: #eef;
+  color: #66c;
+}

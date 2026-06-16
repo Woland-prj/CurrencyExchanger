@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
-import { ConverterCard } from '../components/widgets/CurrencyConverter/ConverterCard';
+import { ConverterCard } from '../components/ConverterCard';
 import { pln, jpy } from '../mockdata/Currencies';
 
 describe('ConverterCard', () => {

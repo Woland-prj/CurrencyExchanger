@@ -1,5 +1,5 @@
 import styles from './CurrencySelect.module.scss';
-import type { Currency } from '../../../models/Currency';
+import type { Currency } from '../../models/Currency';
 
 type CurrencySelectProps = {
   currentCurrency: Currency;

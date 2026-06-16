@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
-import { PairInfo } from '../components/widgets/CurrencyConverter/PairInfo';
+import { PairInfo } from '../components/PairInfo';
 
 describe('PairInfo', () => {
   it('should render selected currency pair', () => {

@@ -1,5 +1,5 @@
-import { ConverterCard } from '../components/widgets/CurrencyConverter/ConverterCard';
-import { CardContainer } from '../components/layout/CardContainer';
+import { ConverterCard } from '../components/ConverterCard';
+import { CardContainer } from '../components/CardContainer';
 
 export const ConverterPage = () => {
   return (

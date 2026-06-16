@@ -1,7 +1,7 @@
 import styles from './CurrencyRow.module.scss';
-import { AmountInput } from '../AmountInput/AmountInput';
-import { CurrencySelect } from '../CurrencySelect/CurrencySelect';
-import type { Currency } from '../../../models/Currency';
+import { AmountInput } from '../AmountInput';
+import { CurrencySelect } from '../CurrencySelect';
+import type { Currency } from '../../models/Currency';
 
 type CurrencyRowProps = {
   value: string;

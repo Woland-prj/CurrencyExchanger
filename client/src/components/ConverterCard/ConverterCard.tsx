@@ -1,10 +1,10 @@
-import { Card } from '../../ui/Card/Card';
-import { ExchangeRateHeader } from './ExchangeRateHeader';
-import { CurrencyRow } from '../../shared/CurrencyRow/CurrencyRow';
-import { PairInfo } from './PairInfo';
-import { CurrencyInfo } from '../../shared/CurrencyInfo/CurrencyInfo';
+import { Card } from '../Card';
+import { ExchangeRateHeader } from '../ExchangeRateHeader';
+import { CurrencyRow } from '../CurrencyRow';
+import { PairInfo } from '../PairInfo';
+import { CurrencyInfo } from '../CurrencyInfo';
 
-import { usd, pln, jpy } from '../../../mockdata/Currencies';
+import { usd, pln, jpy } from '../../mockdata/Currencies';
 
 export const ConverterCard = () => {
   const currencies = [usd, pln, jpy];

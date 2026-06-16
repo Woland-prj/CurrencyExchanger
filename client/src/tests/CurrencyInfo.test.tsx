@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
-import { CurrencyInfo } from '../components/shared/CurrencyInfo/CurrencyInfo';
+import { CurrencyInfo } from '../components/CurrencyInfo';
 import { usd } from '../mockdata/Currencies';
 
 describe('CurrencyInfo', () => {

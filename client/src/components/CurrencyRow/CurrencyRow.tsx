@@ -9,13 +9,21 @@ type CurrencyRowProps = {
   currencies: Currency[];
   onValueChange: (v: string) => void;
   onCurrencyChange: (c: string) => void;
+  isInputBlocked: boolean;
 };
 
-export const CurrencyRow = ({ value, currency, currencies, onValueChange, onCurrencyChange }: CurrencyRowProps) => {
+export const CurrencyRow = ({
+  value,
+  currency,
+  currencies,
+  onValueChange,
+  onCurrencyChange,
+  isInputBlocked
+}: CurrencyRowProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.row}>
-        <AmountInput value={value} onChange={onValueChange} />
+        <AmountInput isBlocked={isInputBlocked} value={value} onChange={onValueChange} />
         <div className={styles.divider}></div>
         <CurrencySelect currentCurrency={currency} currencies={currencies} onChange={onCurrencyChange} />
       </div>

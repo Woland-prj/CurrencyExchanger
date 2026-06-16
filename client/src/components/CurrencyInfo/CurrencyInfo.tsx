@@ -9,9 +9,9 @@ export const CurrencyInfo = ({ currency }: CurrencyInfoProps) => {
   return (
     <div className={styles.info}>
       <h3 className={styles.title}>
-        {currency.Fullname} - {currency.Code} - {currency.Symbol}
+        {currency.name} - {currency.code} - {currency.symbol}
       </h3>
-      <p className={styles.text}>{currency.Description}</p>
+      <p className={styles.text}>{currency.description}</p>
     </div>
   );
 };

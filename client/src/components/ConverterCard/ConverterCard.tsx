@@ -1,38 +1,44 @@
 import { Card } from '../Card';
 import { ExchangeRateHeader } from '../ExchangeRateHeader';
-import { CurrencyRow } from '../CurrencyRow';
 import { PairInfo } from '../PairInfo';
-import { CurrencyInfo } from '../CurrencyInfo';
-
-import { usd, pln, jpy } from '../../mockdata/Currencies';
+import { currencies } from '../../mockdata/Currencies';
+import { priceChanges } from '../../mockdata/Rates';
+import { useConverter } from '../../hooks/useConverter';
+import { ConverterForm } from '../ConverterForm';
 
 export const ConverterCard = () => {
-  const currencies = [usd, pln, jpy];
+  const {
+    amount,
+    result,
+    fromCurrency,
+    toCurrency,
+    rate,
+    updateDate,
+    setAmount,
+    handleFromCurrencyChange,
+    handleToCurrencyChange,
+    swap
+  } = useConverter(currencies, priceChanges);
+
+  const key: string = `${fromCurrency.code}-${toCurrency.code}`;
 
   return (
     <Card>
-      <ExchangeRateHeader rate={0.99} from={pln.Fullname} to={jpy.Fullname} updateDate={new Date()} />
+      <ExchangeRateHeader rate={rate} from={fromCurrency.name} to={toCurrency.name} updateDate={updateDate} />
 
-      <CurrencyRow
-        value="1"
-        currency={pln}
+      <ConverterForm
+        amount={amount}
+        fromCurrency={fromCurrency}
         currencies={currencies}
-        onValueChange={() => {}}
-        onCurrencyChange={() => {}}
-      />
+        setAmount={setAmount}
+        handleFromCurrencyChange={handleFromCurrencyChange}
+        result={result}
+        swap={swap}
+        toCurrency={toCurrency}
+        handleToCurrencyChange={handleToCurrencyChange}
+      ></ConverterForm>
 
-      <CurrencyRow
-        value="0.99"
-        currency={jpy}
-        currencies={currencies}
-        onValueChange={() => {}}
-        onCurrencyChange={() => {}}
-      />
-
-      <PairInfo pair="PLN/JPY" />
-
-      <CurrencyInfo currency={pln} />
-      <CurrencyInfo currency={jpy} />
+      <PairInfo key={key} from={fromCurrency} to={toCurrency} />
     </Card>
   );
 };

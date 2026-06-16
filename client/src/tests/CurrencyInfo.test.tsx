@@ -1,25 +1,21 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { CurrencyInfo } from '../components/CurrencyInfo';
-import { usd } from '../mockdata/Currencies';
+import { currencies } from '../mockdata/Currencies';
+
+const pln = currencies.find((c) => c.code === 'PLN')!;
 
 describe('CurrencyInfo', () => {
   it('should display currency title', () => {
-    render(<CurrencyInfo currency={usd} />);
+    render(<CurrencyInfo currency={pln} />);
 
-    expect(
-      screen.getByText(
-        `${usd.Fullname} - ${usd.Code} - ${usd.Symbol}`
-      )
-    ).toBeInTheDocument();
+    expect(screen.getByText(`${pln.name} - ${pln.code} - ${pln.symbol}`)).toBeInTheDocument();
   });
 
   it('should display currency description', () => {
-    render(<CurrencyInfo currency={usd} />);
+    render(<CurrencyInfo currency={pln} />);
 
-    expect(
-      screen.getByText(usd.Description)
-    ).toBeInTheDocument();
+    expect(screen.getByText(pln.description)).toBeInTheDocument();
   });
 });

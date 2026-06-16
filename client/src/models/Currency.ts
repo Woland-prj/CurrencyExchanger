@@ -1,8 +1,8 @@
 export type CurrencyCode = string;
 
 export type Currency = {
-  Fullname: string;
-  Code: CurrencyCode;
-  Symbol: string;
-  Description: string;
+  code: string;
+  name: string;
+  description: string;
+  symbol: string;
 };

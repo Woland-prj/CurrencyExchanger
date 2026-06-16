@@ -1,7 +1,7 @@
-import type { Currency } from '../../../models/Currency';
-import { CurrencyRow } from '../../shared/CurrencyRow/CurrencyRow';
-import { Button } from '../../ui/Button/Button';
-import styles from './CurrencyForm.module.scss';
+import type { Currency } from '../../models/Currency';
+import { CurrencyRow } from '../CurrencyRow';
+import { Button } from '../Button';
+import styles from './ConverterForm.module.scss';
 
 type ConverterFormProps = {
   amount: string;

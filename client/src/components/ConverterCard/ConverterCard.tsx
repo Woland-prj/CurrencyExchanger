@@ -1,10 +1,10 @@
-import { Card } from '../../ui/Card/Card';
-import { ExchangeRateHeader } from './ExchangeRateHeader';
-import { PairInfo } from './PairInfo';
-import { useConverter } from '../../../hooks/useConverter';
-import { currencies } from '../../../mockdata/Currencies';
-import { priceChanges } from '../../../mockdata/Rates';
-import { ConverterForm } from './CurrencyForm';
+import { Card } from '../Card';
+import { ExchangeRateHeader } from '../ExchangeRateHeader';
+import { PairInfo } from '../PairInfo';
+import { currencies } from '../../mockdata/Currencies';
+import { priceChanges } from '../../mockdata/Rates';
+import { useConverter } from '../../hooks/useConverter';
+import { ConverterForm } from '../ConverterForm';
 
 export const ConverterCard = () => {
   const {

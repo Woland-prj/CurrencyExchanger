@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './PairInfo.module.scss';
-import { CurrencyInfo } from '../../shared/CurrencyInfo/CurrencyInfo';
-import type { Currency } from '../../../models/Currency';
+import { CurrencyInfo } from '../CurrencyInfo';
+import type { Currency } from '../../models/Currency';
 
 type PairInfoProps = {
   from: Currency;

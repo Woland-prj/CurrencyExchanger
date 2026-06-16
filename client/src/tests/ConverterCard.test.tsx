@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import { ConverterCard } from '../components/widgets/CurrencyConverter/ConverterCard';
+import { ConverterCard } from '../components/ConverterCard';
 
 describe('ConverterCard', () => {
   it('should render selected currencies in selects and amount inputs with mock data', () => {

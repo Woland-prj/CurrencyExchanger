@@ -2,8 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import { PairInfo } from '../components/widgets/CurrencyConverter/PairInfo';
-import { currencies } from '../mockdata/Currencies';
+import { PairInfo } from '../components/PairInfo';
 
 const pln = {
   code: 'PLN',
@@ -13,7 +12,13 @@ const pln = {
   symbol: 'zł'
 };
 
-const jpy = currencies.find((c) => c.code === 'JPY')!;
+const jpy = {
+  code: 'JPY',
+  description:
+    'The yen is the official currency of Japan. It is the third-most traded currency in the foreign exchange market, after the United States dollar and the euro. It is also widely used as a third reserve currency after the US dollar and the euro.',
+  name: 'Japanese yen',
+  symbol: '¥'
+};
 
 describe('PairInfo', () => {
   it('should render selected pair', () => {

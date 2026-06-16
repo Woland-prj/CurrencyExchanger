@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { CurrencyInfo } from '../components/shared/CurrencyInfo/CurrencyInfo';
+import { CurrencyInfo } from '../components/CurrencyInfo';
 import { currencies } from '../mockdata/Currencies';
 
 const pln = currencies.find((c) => c.code === 'PLN')!;

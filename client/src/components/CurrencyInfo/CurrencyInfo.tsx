@@ -1,5 +1,5 @@
 import styles from './CurrencyInfo.module.scss';
-import type { Currency } from '../../../models/Currency';
+import type { Currency } from '../../models/Currency';
 
 type CurrencyInfoProps = {
   currency: Currency;
@@ -8,10 +8,10 @@ type CurrencyInfoProps = {
 export const CurrencyInfo = ({ currency }: CurrencyInfoProps) => {
   return (
     <div className={styles.info}>
-      <h3>
+      <h3 className={styles.title}>
         {currency.name} - {currency.code} - {currency.symbol}
       </h3>
-      <p>{currency.description}</p>
+      <p className={styles.text}>{currency.description}</p>
     </div>
   );
 };
